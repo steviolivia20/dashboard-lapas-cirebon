@@ -79,6 +79,27 @@ st.markdown(
 .card, .card *{
   color: #ffffff !important;
 }
+/* ===== FIX TEKS DI GRAFIK PLOTLY (axis, legend, title) ===== */
+.js-plotly-plot .plotly text{
+  fill: #0f172a !important;
+  opacity: 1 !important;
+}
+
+/* Legend */
+.js-plotly-plot .plotly .legend text{
+  fill: #0f172a !important;
+}
+
+/* Colorbar (heatmap) */
+.js-plotly-plot .plotly .cbaxis text{
+  fill: #0f172a !important;
+}
+
+/* Modebar icons (toolbar atas grafik) biar keliatan */
+.js-plotly-plot .modebar-btn path{
+  fill: #0f172a !important;
+}
+
 
 /* Biar widget (selectbox, input) jelas */
 div[data-baseweb="select"] > div,
@@ -998,6 +1019,7 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
 
