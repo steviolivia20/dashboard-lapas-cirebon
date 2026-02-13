@@ -202,6 +202,15 @@ def build_datetime(df: pd.DataFrame) -> pd.DataFrame:
 # =========================================================
 # SIDEBAR – DATA SOURCE & PARAMETER
 # =========================================================
+st.sidebar.markdown("## ⚙️ Pengaturan")
+st.sidebar.caption(
+    "Gunakan file Excel yang kamu kirim, atau upload ulang jika ingin update data."
+)
+
+# Upload file Excel oleh user
+uploaded = st.sidebar.file_uploader(
+    "Upload data (Excel .xlsx)", type=["xlsx"]
+)
 
 # Path default jika user tidak upload file
 BASE_DIR = Path(__file__).resolve().parent
@@ -964,4 +973,5 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
