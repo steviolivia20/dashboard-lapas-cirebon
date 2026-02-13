@@ -67,6 +67,43 @@ st.markdown(
 /* Hilangkan elemen default */
 #MainMenu, footer, header{visibility:hidden;}
 
+/* ====== FORCE TEXT KONTRAS (BIAR GAK SAMAR DI HP) ====== */
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] *{
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+/* Balikin teks putih untuk area yang memang berwarna */
+.topbar, .topbar *,
+.card, .card *{
+  color: #ffffff !important;
+}
+
+/* Biar widget (selectbox, input) jelas */
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div,
+div[data-baseweb="textarea"] > div{
+  background: #ffffff !important;
+  border-color: rgba(15,23,42,.20) !important;
+}
+
+div[data-baseweb="select"] *,
+div[data-baseweb="input"] input,
+div[data-baseweb="textarea"] textarea{
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+/* Dataframe / tabel biar teksnya kebaca */
+[data-testid="stDataFrame"]{
+  background: #ffffff !important;
+}
+[data-testid="stDataFrame"] *{
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
 /* Card */
 .glass{
     background: var(--card);
@@ -961,6 +998,7 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
 
