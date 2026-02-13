@@ -657,11 +657,24 @@ with tab1:
     with c1:
         st.markdown("<div class='glass'>", unsafe_allow_html=True)
         st.plotly_chart(fig_bar, use_container_width=True)
+        png = fig_bar.to_image(format="png", scale=2)
+        st.download_button(
+            "⬇️ Download grafik (PNG)",
+            data=png,
+            file_name="distribusi_jenis_kejahatan.png",
+            mime="image/png"
+        )
         st.markdown("</div>", unsafe_allow_html=True)
 
     with c2:
         st.markdown("<div class='glass'>", unsafe_allow_html=True)
         st.plotly_chart(fig_pie, use_container_width=True)
+        png = fig_pie.to_image(format="png", scale=2)
+        st.download_button(
+        "⬇️ Download grafik (PNG)",
+        data=png,
+        file_name="distribusi_jenis_kelamin.png",
+        mime="image/png")
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
@@ -1019,6 +1032,7 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
 
