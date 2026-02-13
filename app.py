@@ -64,6 +64,23 @@ st.markdown(
     padding-top: 1.2rem;
     padding-bottom: 2rem;
 }
+/* Perbaiki teks yang terlalu samar (terutama di HP) */
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li{
+    color: rgba(15,23,42,.86) !important;
+}
+
+/* Caption Streamlit biar nggak abu-abu pudar */
+.stCaption, [data-testid="stCaptionContainer"]{
+    color: rgba(15,23,42,.68) !important;
+}
+
+/* Label input/filter biar lebih jelas */
+section[data-testid="stSidebar"] label,
+label, .stSelectbox label, .stMultiSelect label, .stNumberInput label{
+    color: rgba(15,23,42,.86) !important;
+    font-weight: 600;
+}
 
 /* Hilangkan elemen default */
 #MainMenu, footer, header{visibility:hidden;}
@@ -962,6 +979,7 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
 
