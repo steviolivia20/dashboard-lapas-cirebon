@@ -115,15 +115,6 @@ div[data-baseweb="textarea"] textarea{
   color: #0f172a !important;
   opacity: 1 !important;
 }
-/* Biar modebar Plotly bisa diklik di HP */
-.js-plotly-plot .modebar{
-  z-index: 9999 !important;
-  pointer-events: all !important;
-}
-
-.js-plotly-plot .modebar-btn{
-  pointer-events: all !important;
-}
 
 /* Dataframe / tabel biar teksnya kebaca */
 [data-testid="stDataFrame"]{
@@ -1028,6 +1019,7 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
 
