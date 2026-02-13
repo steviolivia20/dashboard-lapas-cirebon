@@ -203,14 +203,6 @@ def build_datetime(df: pd.DataFrame) -> pd.DataFrame:
 # SIDEBAR – DATA SOURCE & PARAMETER
 # =========================================================
 st.sidebar.markdown("## ⚙️ Pengaturan")
-st.sidebar.caption(
-    "Gunakan file Excel yang kamu kirim, atau upload ulang jika ingin update data."
-)
-
-# Upload file Excel oleh user
-uploaded = st.sidebar.file_uploader(
-    "Upload data (Excel .xlsx)", type=["xlsx"]
-)
 
 # Path default jika user tidak upload file
 BASE_DIR = Path(__file__).resolve().parent
@@ -235,10 +227,7 @@ capacity = st.sidebar.number_input(
 # LOAD DATA
 # =========================================================
 try:
-    if uploaded is not None:
-        df_raw = load_excel_from_upload(uploaded)
-    else:
-        df_raw = load_excel_from_path(DEFAULT_FILE)
+    df_raw = load_excel_from_path(DEFAULT_FILE)
 
 except Exception as e:
     st.error("Data belum bisa dibaca. Pastikan file Excel sesuai format dan kolomnya lengkap.")
@@ -973,5 +962,6 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
 
 
