@@ -53,11 +53,28 @@ st.markdown(
     --text:#0f172a;
 }
 
-/* Background */
-.stApp{
-    background: linear-gradient(180deg, #f8fafc, #e2e8f0) !important;
-    color: var(--text);
+/* Background (lebih kompatibel di hosting & mobile) */
+html, body, .stApp, [data-testid="stAppViewContainer"]{
+    background: linear-gradient(180deg, #f8fbff 0%, #e6efff 100%) !important; /* cerah tapi jelas */
 }
+
+/* Biar konten utama gak nimpain background */
+[data-testid="stAppViewContainer"] > .main{
+    background: transparent !important;
+}
+
+/* Card: jangan terlalu transparan biar gak "samar" */
+:root{
+    --card: rgba(255,255,255,0.98);
+}
+
+/* Mobile: matiin blur (ini yang sering bikin kabut di HP) */
+@media (max-width: 768px){
+    .glass{
+        backdrop-filter: none !important;
+    }
+}
+
 
 /* Container */
 .block-container{
