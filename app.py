@@ -17,12 +17,17 @@ import streamlit as st
 # streamlit adalah framework utama untuk membuat dashboard web interaktif
 
 import plotly.graph_objects as go
+#digunakan untuk membuat visualisasi data interaktif menggunakan 
+#Plotly di Python, khususnya ketika Anda ingin kontrol penuh terhadap 
+#elemen-elemen grafik seperti sumbu, layout, warna, anotasi, dan tipe chart khusus.
 
 import plotly.express as px
 # plotly.express digunakan untuk membuat grafik interaktif
 # seperti bar chart, line chart, pie chart, heatmap, dan treemap
 
 from pathlib import Path
+#digunakan untuk mengelola dan memanipulasi file serta direktori di Python dengan cara yang lebih modern, konsisten, dan platform-independent dibandingkan modul os.path. Modul pathlib memperkenalkan konsep “object-oriented path”, artinya setiap file 
+#atau folder diwakili sebagai objek Path yang memiliki method dan property untuk operasi file.
 
 # =========================================================
 # PAGE CONFIG
@@ -1391,73 +1396,73 @@ with tab2:
     fig_year = apply_plot_theme(fig_year, height=420)
     st.plotly_chart(fig_year, use_container_width=True, config=PLOT_CONFIG)
 
-    # -----------------------------------------------------
-    # LINE CHART: Tren Kumulatif
-    # -----------------------------------------------------
+    # # -----------------------------------------------------
+    # # LINE CHART: Tren Kumulatif
+    # # -----------------------------------------------------
 
-    cum = (
-        df_f.groupby("periode", as_index=False)["jumlah_narapidana"]
-            .sum()
-            .sort_values("periode")
-    )
-    cum["kumulatif"] = cum["jumlah_narapidana"].cumsum()
+    # cum = (
+    #     df_f.groupby("periode", as_index=False)["jumlah_narapidana"]
+    #         .sum()
+    #         .sort_values("periode")
+    # )
+    # cum["kumulatif"] = cum["jumlah_narapidana"].cumsum()
 
-    fig_cum = px.line(
-        cum,
-        x="periode",
-        y="kumulatif",
-        markers=True,
-        title="Trend Kumulatif Jumlah Narapidana",
-        labels={"periode": "", "kumulatif": "Total Kumulatif"}
-        )
+    # fig_cum = px.line(
+    #     cum,
+    #     x="periode",
+    #     y="kumulatif",
+    #     markers=True,
+    #     title="Trend Kumulatif Jumlah Narapidana",
+    #     labels={"periode": "", "kumulatif": "Total Kumulatif"}
+    #     )
 
-    fig_cum = apply_plot_theme(fig_cum, height=380)
-    st.plotly_chart(fig_cum, use_container_width=True, config=PLOT_CONFIG)
+    # fig_cum = apply_plot_theme(fig_cum, height=380)
+    # st.plotly_chart(fig_cum, use_container_width=True, config=PLOT_CONFIG)
 
-    # =========================
-    # =========================
-    # YoY Growth Total Narapidana
-    # =========================
-    yoy = (
-        df_f.groupby("tahun", as_index=False)["jumlah_narapidana"].sum()
-        .sort_values("tahun")
-    )
+    # # =========================
+    # # =========================
+    # # YoY Growth Total Narapidana
+    # # =========================
+    # yoy = (
+    #     df_f.groupby("tahun", as_index=False)["jumlah_narapidana"].sum()
+    #     .sort_values("tahun")
+    # )
 
-    yoy["yoy_pct"] = yoy["jumlah_narapidana"].pct_change() * 100
-    yoy["yoy_pct"] = yoy["yoy_pct"].fillna(0)
+    # yoy["yoy_pct"] = yoy["jumlah_narapidana"].pct_change() * 100
+    # yoy["yoy_pct"] = yoy["yoy_pct"].fillna(0)
 
-    # Warna dinamis berdasarkan naik/turun
-    colors = []
-    for val in yoy["yoy_pct"]:
-        if val > 0:
-            colors.append("#19a0e9")   # biru
-        elif val < 0:
-            colors.append("#ef4444")   # merah
-        else:
-            colors.append("#689fff")   # biru
+    # # Warna dinamis berdasarkan naik/turun
+    # colors = []
+    # for val in yoy["yoy_pct"]:
+    #     if val > 0:
+    #         colors.append("#19a0e9")   # biru
+    #     elif val < 0:
+    #         colors.append("#ef4444")   # merah
+    #     else:
+    #         colors.append("#689fff")   # biru
 
-    fig_yoy = go.Figure(
-        data=[
-            go.Bar(
-                x=yoy["tahun"],
-                y=yoy["yoy_pct"],
-                marker_color=colors
-            )
-        ]
-    )
+    # fig_yoy = go.Figure(
+    #     data=[
+    #         go.Bar(
+    #             x=yoy["tahun"],
+    #             y=yoy["yoy_pct"],
+    #             marker_color=colors
+    #         )
+    #     ]
+    # )
 
-    fig_yoy.update_layout(
-        title="Pertumbuhan Tahunan (YoY) Jumlah Narapidana (%)",
-        xaxis_title="Tahun",
-        yaxis_title="YoY (%)"
-    )
+    # fig_yoy.update_layout(
+    #     title="Pertumbuhan Tahunan (YoY) Jumlah Narapidana (%)",
+    #     xaxis_title="Tahun",
+    #     yaxis_title="YoY (%)"
+    # )
 
-    fig_yoy.update_traces(
-        hovertemplate="Tahun: %{x}<br>YoY: %{y:.2f}%<extra></extra>"
-    )
+    # fig_yoy.update_traces(
+    #     hovertemplate="Tahun: %{x}<br>YoY: %{y:.2f}%<extra></extra>"
+    # )
 
-    fig_yoy = apply_plot_theme(fig_yoy, height=360)
-    st.plotly_chart(fig_yoy, use_container_width=True, config=PLOT_CONFIG)
+    # fig_yoy = apply_plot_theme(fig_yoy, height=360)
+    # st.plotly_chart(fig_yoy, use_container_width=True, config=PLOT_CONFIG)
 
 
 # TAB 3: KOMPOSISI (COPY-PASTE FULL)
