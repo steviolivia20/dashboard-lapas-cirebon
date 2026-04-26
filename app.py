@@ -1794,28 +1794,28 @@ all_columns = display_table.columns.tolist()
 if "selected_table_columns" not in st.session_state:
     st.session_state.selected_table_columns = all_columns
 
-with st.popover("👁️ Pilih Kolom Tabel"):
-    st.markdown("**Tampilkan kolom:**")
+# with st.popover("👁️ Pilih Kolom Tabel"):
+#     st.markdown("**Tampilkan kolom:**")
 
-    select_all = st.checkbox(
-        "Pilih semua kolom",
-        value=len(st.session_state.selected_table_columns) == len(all_columns)
-    )
+#     select_all = st.checkbox(
+#         "Pilih semua kolom",
+#         value=len(st.session_state.selected_table_columns) == len(all_columns)
+#     )
 
-    if select_all:
-        st.session_state.selected_table_columns = all_columns
+#     if select_all:
+#         st.session_state.selected_table_columns = all_columns
 
-    selected_columns = st.multiselect(
-        "Kolom yang ditampilkan",
-        options=all_columns,
-        default=st.session_state.selected_table_columns,
-        label_visibility="collapsed"
-    )
+#     selected_columns = st.multiselect(
+#         "Kolom yang ditampilkan",
+#         options=all_columns,
+#         default=st.session_state.selected_table_columns,
+#         label_visibility="collapsed"
+#     )
 
-    if selected_columns:
-        st.session_state.selected_table_columns = selected_columns
-    else:
-        st.warning("Minimal pilih satu kolom.")
+#     if selected_columns:
+#         st.session_state.selected_table_columns = selected_columns
+#     else:
+#         st.warning("Minimal pilih satu kolom.")
 
 # Tampilkan tabel berdasarkan kolom yang dipilih
 st.dataframe(
