@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Label dan teks biasa */
-label, p, span, div {
+label, p {
   color: rgba(255,255,255,0.92) !important;
 }
 
@@ -590,6 +590,197 @@ div[data-testid="stDownloadButton"] > button:hover{
   transform: translateY(-1px);
 }
 
+
+/* =====================================================
+   FIX FINAL DATAFRAME REKAP
+   Menu kecil langsung muncul, icon terlihat, popup jelas
+   ===================================================== */
+
+div[data-testid="stDataFrame"] {
+  background: #ffffff !important;
+  border-radius: 10px !important;
+  overflow: visible !important;
+}
+
+div[data-testid="stDataFrame"] * {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+div[data-testid="stDataFrame"] [role="columnheader"] *,
+div[data-testid="stDataFrame"] [role="gridcell"] * {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+[data-testid="stElementToolbar"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.25) !important;
+  border-radius: 10px !important;
+  padding: 4px !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25) !important;
+  z-index: 999999 !important;
+}
+
+[data-testid="stElementToolbar"] button,
+div[data-testid="stDataFrame"] button {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.28) !important;
+  border-radius: 7px !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+  padding: 4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+[data-testid="stElementToolbar"] button:hover,
+div[data-testid="stDataFrame"] button:hover {
+  background: #e2e8f0 !important;
+  border-color: rgba(15, 23, 42, 0.55) !important;
+}
+
+[data-testid="stElementToolbar"] svg,
+[data-testid="stElementToolbar"] svg *,
+div[data-testid="stDataFrame"] button svg,
+div[data-testid="stDataFrame"] button svg * {
+  color: #0f172a !important;
+  stroke: #0f172a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[data-testid="stElementToolbar"] svg path:not([fill="none"]),
+[data-testid="stElementToolbar"] svg rect:not([fill="none"]),
+[data-testid="stElementToolbar"] svg circle:not([fill="none"]),
+div[data-testid="stDataFrame"] button svg path:not([fill="none"]),
+div[data-testid="stDataFrame"] button svg rect:not([fill="none"]),
+div[data-testid="stDataFrame"] button svg circle:not([fill="none"]) {
+  fill: #0f172a !important;
+}
+
+[data-testid="stElementToolbar"] svg path,
+[data-testid="stElementToolbar"] svg rect,
+[data-testid="stElementToolbar"] svg circle,
+[data-testid="stElementToolbar"] svg line,
+[data-testid="stElementToolbar"] svg polyline,
+[data-testid="stElementToolbar"] svg polygon,
+div[data-testid="stDataFrame"] button svg path,
+div[data-testid="stDataFrame"] button svg rect,
+div[data-testid="stDataFrame"] button svg circle,
+div[data-testid="stDataFrame"] button svg line,
+div[data-testid="stDataFrame"] button svg polyline,
+div[data-testid="stDataFrame"] button svg polygon {
+  stroke: #0f172a !important;
+  stroke-width: 2 !important;
+}
+
+div[data-baseweb="popover"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.20) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25) !important;
+  z-index: 999999 !important;
+}
+
+div[data-baseweb="popover"] *,
+div[data-baseweb="popover"] label,
+div[data-baseweb="popover"] span,
+div[data-baseweb="popover"] div,
+div[data-baseweb="popover"] p,
+div[data-baseweb="popover"] button {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+div[data-baseweb="checkbox"] div {
+  background-color: #ff4b4b !important;
+  border-color: #ff4b4b !important;
+}
+
+div[data-baseweb="checkbox"] svg,
+div[data-baseweb="checkbox"] svg * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+div[data-baseweb="popover"] [role="option"],
+div[data-baseweb="popover"] [role="menuitem"],
+div[data-baseweb="popover"] li,
+div[data-baseweb="popover"] button {
+  background: #ffffff !important;
+}
+
+div[data-baseweb="popover"] [role="option"]:hover,
+div[data-baseweb="popover"] [role="menuitem"]:hover,
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="popover"] button:hover {
+  background: rgba(37, 99, 235, 0.10) !important;
+}
+/* =========================
+   CUSTOM POPOVER PILIH KOLOM
+   ========================= */
+
+div[data-testid="stPopover"] button {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.25) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+
+div[data-testid="stPopover"] button * {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+div[data-testid="stPopover"] svg {
+  color: #0f172a !important;
+  fill: #0f172a !important;
+  stroke: #0f172a !important;
+}
+/* =========================
+   FIX: WARNA TEKS SECTION KPI
+   ========================= */
+
+.section-head,
+.section-head * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.section-title,
+.section-title *,
+.section-title .kpi-tag {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.section-sub {
+  color: rgba(255, 255, 255, 0.75) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.section-pill,
+.section-pill * {
+  color: rgba(255, 255, 255, 0.90) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.90) !important;
+}
     </style>
    """,
     unsafe_allow_html=True
@@ -739,7 +930,7 @@ def build_datetime(df: pd.DataFrame) -> pd.DataFrame:
 #     "Upload data (Excel .xlsx)", type=["xlsx"]
 # )
 
-# Path default jika user tidak upload file
+
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_FILE = BASE_DIR / "data" / "data_narapidana_cirebon_clean.xlsx"
 @st.cache_data(show_spinner=False)
@@ -1590,8 +1781,48 @@ table = table.sort_values(
 )
 
 # Tampilkan tabel
-st.write(f"Total baris: **{len(table):,}**")
-st.dataframe(table.drop(columns=["periode"]), use_container_width=True, height=360)
+# =========================
+# MENU KOLOM TABEL REKAP
+# =========================
+
+display_table = table.drop(columns=["periode"])
+
+st.write(f"Total baris: **{len(display_table):,}**")
+
+all_columns = display_table.columns.tolist()
+
+if "selected_table_columns" not in st.session_state:
+    st.session_state.selected_table_columns = all_columns
+
+with st.popover("👁️ Pilih Kolom Tabel"):
+    st.markdown("**Tampilkan kolom:**")
+
+    select_all = st.checkbox(
+        "Pilih semua kolom",
+        value=len(st.session_state.selected_table_columns) == len(all_columns)
+    )
+
+    if select_all:
+        st.session_state.selected_table_columns = all_columns
+
+    selected_columns = st.multiselect(
+        "Kolom yang ditampilkan",
+        options=all_columns,
+        default=st.session_state.selected_table_columns,
+        label_visibility="collapsed"
+    )
+
+    if selected_columns:
+        st.session_state.selected_table_columns = selected_columns
+    else:
+        st.warning("Minimal pilih satu kolom.")
+
+# Tampilkan tabel berdasarkan kolom yang dipilih
+st.dataframe(
+    display_table[st.session_state.selected_table_columns],
+    use_container_width=True,
+    height=360
+)
 
 # ---------------------------------------------------------
 # EXPORT DATA
